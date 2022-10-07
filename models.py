@@ -7,6 +7,12 @@ class Generator(nn.Module):
             nn.Linear(64, 64, bias = False),
             nn.BatchNorm1d(64),
             nn.LeakyReLU(),
+            nn.Linear(64, 64, bias = False),
+            nn.BatchNorm1d(64),
+            nn.LeakyReLU(),
+            nn.Linear(64, 64, bias = False),
+            nn.BatchNorm1d(64),
+            nn.LeakyReLU(),
             nn.Linear(64, 256, bias = False), 
             nn.BatchNorm1d(256),
             nn.LeakyReLU(),
@@ -38,6 +44,12 @@ class Discriminator(nn.Module):
             nn.Linear(256, 64, bias = False),
             nn.BatchNorm1d(64),
             nn.LeakyReLU(),
+            nn.Linear(64, 64, bias = False),
+            nn.BatchNorm1d(64),
+            nn.LeakyReLU(),
+            nn.Linear(64, 64, bias = False),
+            nn.BatchNorm1d(64),
+            nn.LeakyReLU(),
             nn.Linear(64, 1, bias = False),
             nn.Sigmoid()
         )
@@ -66,4 +78,4 @@ class Critic(nn.Module):
             
     def forward(self, X):
         return self.main(X)
-        
+
